@@ -12,21 +12,16 @@ const guests = [
   "Maneskin",
 ];
 
-const guestsObjects = [];
+const guestObject = guest.map((guest, index) =>
+  generateGuestObject(guest, index + 1, "Tavolo Vip")
+);
 
-guests.forEach(_guest, index) => {
-    console.log(_guest, index);
-
-    const guest = {
-        name: _guest,
-        placeholder: index + 1,
-        tableName: "Tavolo Vip",
-    };
-
-    guestsObjects.push(guest);
+function generateGuestObject(_name, _placeholder, _table) {
+  return {
+    name: _name,
+    placeholder: _placeholder,
+    table: _table,
+  };
 }
 
-console.log(guestsObjects);
-
-
-
+console.log(guestObject);
